@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+
+    <style>
+        .esercizi-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .weeks {
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .day {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            min-height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .day:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.07);
+            cursor: pointer;
+        }
+        .day a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    </style>
 </head>
+
 <body>
-    <a href="Esercizi/W1/D1/index.html">Vai A W1d1</a>
+    <div class="esercizi-container">
+        <div class="weeks" id="week-1">
+            <h2>Week 1</h2>
+            <div class="day" id="w1d1" onclick="goTo('Esercizi/W1/D1/index.html')"><p>Esercizio 1</p></div>
+            <div class="day" id="w1d2"></div>
+            <div class="day" id="w1d3"></div>
+            <div class="day" id="w1d4"></div>
+        </div>
+
+        <div class="weeks" id="week-2">
+            <h2>Week 2</h2>
+            <div class="day" id="w2d1"></div>
+            <div class="day" id="w2d2"></div>
+            <div class="day" id="w2d3"></div>
+            <div class="day" id="w2d4"></div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function goTo(url) {
+            window.location.href = url;
+        }
+    </script>
+
 </body>
+
 </html>
