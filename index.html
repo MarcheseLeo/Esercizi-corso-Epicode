@@ -13,6 +13,7 @@
             align-items: center;
             margin-top: 50px;
         }
+
         .weeks {
             margin: 20px;
             padding: 20px;
@@ -33,11 +34,13 @@
             justify-content: center;
             align-items: center;
         }
+
         .day:hover {
             background-color: #e0e0e0;
             transform: scale(1.07);
             cursor: pointer;
         }
+
         .day a {
             text-decoration: none;
             color: #007BFF;
@@ -45,28 +48,49 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+        .weeks h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
 <body>
     <div class="esercizi-container">
-        <div class="weeks" id="week-1">
+        <ul class="weeks" id="week-1">
             <h2>Week 1</h2>
-            <div class="day day-1" id="w1d1" onclick="goTo('Esercizi/W1/D1/index.html')"><p>Esercizio 1</p></div>
-            <div class="day day-2" id="w1d2"></div>
-            <div class="day day-3" id="w1d3"></div>
-            <div class="day day-4" id="w1d4"></div>
-        </div>
+            <li class="day day-1" id="w1d1" onclick="goTo('Esercizi/W1/D1/index.html')">
+                <p>Esercizio 1</p>
+            </li>
+            <li class="day day-2" id="w1d2" onclick="goTo('')">
+                <p>Esercizio 2</p>
+            </li>
+            <li class="day day-3" id="w1d3" onclick="goTo('')">
+                <p>Esercizio 2</p>
+            </li>
+            <li class="day day-4" id="w1d4" onclick="goTo('')">
+                <p>Esercizio 2</p>
+            </li>
+        </ul>
 
-        <div class="weeks" id="week-2">
-            <h2>Week 2</h2>
-            <div class="day day-1" id="w2d1"></div>
-            <div class="day day-2" id="w2d2"></div>
-            <div class="day day-3" id="w2d3"></div>
-            <div class="day day-4" id="w2d4"></div>
-        </div>
+        <ul class="weeks" id="week-2">
+            <h2>Week 1</h2>
+            <li class="day day-1" id="w2d1" onclick="goTo('')">
+                <p>Esercizio 1</p>
+            </li>
+            <li class="day day-2" id="w2d2" onclick="goTo('')">
+                <p>Esercizio 2</p>
+            </li>
+            <li class="day day-3" id="w2d3" onclick="goTo('')">
+                <p>Esercizio 2</p>
+            </li>
+            <li class="day day-4" id="w2d4" onclick="goTo('')">
+                <p>Esercizio 2</p>
+            </li>
+        </ul>
     </div>
-    </div>
+    
 
     <script>
         function goTo(url) {
