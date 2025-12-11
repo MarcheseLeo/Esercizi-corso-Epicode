@@ -4,59 +4,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Corso Home</title>
 
     <style>
-        body{
-            background-color: ;
+        /* QUI PUOI INCOLLARE UNA DELLE ALTRE PALETTE 
+           (Vedi le opzioni sotto il codice)
+        */
+        :root {
+            /* PALETTE 1: Indigo Minimal (Default) */
+            --bg-body: #f8fafc;           /* Sfondo pagina molto chiaro */
+            --bg-card: #ffffff;           /* Sfondo card bianco puro */
+            --text-main: #334155;         /* Testo grigio scuro (non nero) */
+            --text-sub: #64748b;          /* Testo secondario */
+            --accent: #6366f1;            /* Colore principale (Indigo) */
+            --accent-hover: #4f46e5;      /* Colore al passaggio del mouse */
+            --border-color: #e2e8f0;      /* Bordi sottili */
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Ombra morbida */
         }
+
+        /* Reset e Font */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Font moderno */
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
+        }
+
         .esercizi-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 50px;
+            margin-top: 60px;
+            padding-bottom: 80px;
+            gap: 40px;
         }
 
         .weeks {
-            margin: 20px;
-            padding: 20px;
-            border: 2px solid #0000005d;
-            background:#f9f9f9 ;
-            border-radius: 10px;
-            width: 50%;
+            background: var(--bg-card);
+            width: 90%;
             max-width: 550px;
-            text-align: center;
-        }
-
-        .day {
-            margin: 2vh 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 35px;
-            background-color: #f9f9f9;
-            min-height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .day:hover {
-            background-color: #e0e0e0;
-            transform: scale(1.03);
-            cursor: pointer;
-        }
-
-        .day a {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-            font-family: Arial, Helvetica, sans-serif;
+            padding: 30px;
+            border-radius: 20px; /* Arrotondamento moderno */
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            list-style: none;
         }
 
         .weeks h2 {
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: left;
-            margin-top: 10px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            color: var(--accent); /* Il titolo prende il colore dell'accento */
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--bg-body);
+            padding-bottom: 10px;
+        }
+
+        .day {
+            margin: 12px 0;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            min-height: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .day p {
+            font-weight: 500;
+            color: var(--text-main);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Effetti Hover Moderni */
+        .day:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .day:hover p {
+            color: var(--accent-hover);
+            font-weight: 600;
+        }
+
+
+        /* Gestione Link */
+        .day a {
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
@@ -102,14 +155,11 @@
             </li>
         </ul>
     </div>
-    
 
     <script>
         function goTo(url) {
-            window.location.href = url;
+            if(url) window.location.href = url;
         }
     </script>
-
 </body>
-
 </html>
